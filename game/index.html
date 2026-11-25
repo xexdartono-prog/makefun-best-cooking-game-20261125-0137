@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ember Counter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div>
+        <h1>EMBER COUNTER</h1>
+        <p>Fast plates, warm kitchen, happy lunch rush.</p>
+      </div>
+      <div class="stats" aria-label="game stats">
+        <span id="dayStat">Day 1</span>
+        <span id="timerStat">Shift 80s</span>
+        <span id="scoreStat">Score 0</span>
+        <span id="servedStat">Served 0/6</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel ordersPanel" aria-label="order board">
+        <h2>ORDER BOARD</h2>
+        <div id="orders" class="orders"></div>
+      </section>
+
+      <section class="panel kitchenPanel" aria-label="kitchen">
+        <h2>KITCHEN</h2>
+        <div class="kitchenScene">
+          <div class="stove"><span></span><span></span><span></span><span></span></div>
+          <div id="plateVisual" class="plateVisual"></div>
+          <div class="counterLine"></div>
+        </div>
+        <div class="cookTrack"><div id="cookBar" class="cookBar"></div></div>
+        <p id="message" class="message">Pick an order, then build the plate.</p>
+        <div class="actions">
+          <button id="cookBtn" type="button">Cook (C)</button>
+          <button id="serveBtn" type="button">Serve (Space)</button>
+          <button id="undoBtn" type="button">Undo</button>
+          <button id="trashBtn" type="button">Trash</button>
+        </div>
+      </section>
+
+      <section class="panel assemblyPanel" aria-label="assembly">
+        <h2>ASSEMBLY</h2>
+        <div id="selectedRecipe" class="selectedRecipe"></div>
+        <div id="checklist" class="checklist"></div>
+        <h3>On the plate</h3>
+        <div id="plateList" class="plateList"></div>
+      </section>
+    </main>
+
+    <section class="shelf" aria-label="ingredients">
+      <h2>INGREDIENTS ON COUNTER</h2>
+      <div id="ingredients" class="ingredients"></div>
+    </section>
+
+    <footer class="help">Click an order and ingredients, or use keys 1-0/Q/W. C cooks, Space serves, Backspace undoes, T trashes.</footer>
+
+    <div id="overlay" class="overlay">
+      <div class="overlayCard">
+        <h2 id="overlayTitle">Ember Counter</h2>
+        <p id="overlayText">Serve the lunch rush before patience runs out.</p>
+        <button id="startBtn" type="button">Start shift</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
